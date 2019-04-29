@@ -1,0 +1,67 @@
+import java.util.Scanner; // TRABALHO DE POO 
+public class Poocalc {
+	 public static void main (String args []) {
+		 // CALCULAR CVELOCIDADE MEDIA DE UM CARRO EM PERCUSSO  
+		 
+	      Scanner reader = new Scanner(System.in);
+	      System.out.println ("\t### Bem vindo ao controle de calculos medias dos veiculos! ###\n");
+	      System.out.println ("* Entre com o tipo de informação desejada * \n");
+	      System.out.println ("1 - Para calcular media de velocidade de um veiculo.");
+	      System.out.println ("2 - Para calcular media de gasto de conbustivel para percorre um determinado percursso.");
+	      System.out.println ("3 - para cadastrar o codigo do carro.");
+	      int lido = reader.nextInt();
+	     // AQUI FOI CIADO UM MENU PARA ESCOLHA DE OPÇAO
+	      // SOLICITANDO QUE O USUARIAO ENTRE COM OS DADOS 
+	      
+	      double num1, num2, vm , md ;
+	      // DECLARAÇAO DE VAREAVIS TIPO DOUBLE 
+	      Scanner input = new Scanner(System.in);
+	      if (lido == 1) {
+	         System.out.println ("***Media de velocidade***");
+	         // ENTRADAS DE DADOS SOLICITADO AO OSUARIO 
+	         System.out.print("Digite a extensão da pista percorrida pelo carro em kilometros: ");
+	         num1 = input.nextDouble();
+	         System.out.print("Digite o tempo para percorrer a extensão da pista hora/minuto : ");
+             num2 = input.nextDouble();
+             // CALCULO DE MEDIA DE VELOCIADE 
+             vm =  num1/ num2;
+             System.out.print("A velocidade media do carro foi de "+ vm +"kilometros");
+	      }
+	      
+	      
+	      if (lido == 2) {
+	    	  //  DECLARAÇAO DE VAREAVIS TIPO DOUBLE 
+	    	  System.out.println ("***Media de gasto de conbustivel***.");
+	      		System.out.print("Digite a extensão da pista em km: ");
+	      		num1 = input.nextDouble();
+	      		System.out.print("digite a quantidade de litros de conbustivel no tanque:");
+	      		num2 = input.nextDouble();
+	      		// CALCULO DE MEDIA DE CONBUSTIVEL GASTO EM UM PERCURSSO 
+	      		md = num2/num1; 
+	      		System.out.print("A media gasta de conbustivel neste corrida foi de:"+md+"litros por kilometros rodado");	  
+	      }
+	      if (lido == 3) {
+	    	  System.out.println("***cadastro de carros***");
+	    	  // AQUI FOI CRIADO UM VETOR PARA ARMAZENAR OS CODGOS DOS CARROS DE UMA DETERMINADA CORRIDA 
+	    	  Scanner sc = new Scanner (System.in);
+	    	  // DECLARADO O VETOR COM INT (INTEIRO)
+		      int  nucarros = 5;
+		      int [] velocidadeMedia = new int[nucarros];
+		      // AQUI FOI DECLARADO UM VETOR  COM 5 POSSIÇAO 
+		      for ( int i=0;i< nucarros;++i) {
+		    	  System.out.println("insira o codgo do "+ (i+1)+"º carro:");
+			      	velocidadeMedia[i] = input.nextInt();
+	    	  
+	      }// AQUI IMPRIME EN TELA OS CODGOS DOS CARROS CADASTRADO.
+		      for ( int i=0;i< nucarros;++i) {
+		    	  System.out.println("Os codgos dos carros sao "+velocidadeMedia[i]);
+		    	  
+		      }
+	      
+	    	  
+	      }
+	      	
+	    		  
+	    		 
+	 }
+}
